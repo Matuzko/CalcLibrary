@@ -1,11 +1,12 @@
-/**
- * Created by Дима on 15.06.2016.
- */
+import mainLogic.Executor;
+import mainLogic.TaskParser;
+
+
 public class Calculator {
-    public static void calculate(String taskText) throws WrongCaseException {
+
+    public static void calculate (String taskText, Executor executor){
         TaskParser taskParser = new TaskParser(taskText);
-        Executor executor = new Executor(taskParser);
-        executor.execute();
+        executor.execute(taskParser);
         System.out.println(taskText + " = " + taskParser.getResult());
     }
 }

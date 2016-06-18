@@ -1,9 +1,9 @@
-import Exceptions.WrongInputException;
+package mainLogic;
 
-/**
- * Created by Дима on 15.06.2016.
- */
+
+
 public class TaskParser {
+
     private String firstOperand, secondOperand, type, operator, result;
 
     public String getResult() {
@@ -48,17 +48,11 @@ public class TaskParser {
 
     public TaskParser(String taskText) {
         String taskTextMassive[] = taskText.split(" ");
-        try {
-            if (taskTextMassive.length > 4) {
-                throw new WrongInputException("Your task text must be like 'd 1 + 1'");
-            }
-        } catch (WrongInputException e) {
-            e.printStackTrace();
-        }
 
         setType(taskTextMassive[0]);
         setFirstOperand(taskTextMassive[1]);
         setOperator(taskTextMassive[2]);
         setSecondOperand(taskTextMassive[3]);
+
     }
 }
