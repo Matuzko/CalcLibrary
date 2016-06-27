@@ -1,12 +1,24 @@
+import mainLogic.DefaultExecutorImp;
 import mainLogic.Executor;
 import mainLogic.TaskParser;
 
 
 public class Calculator {
 
-    public static void calculate (String taskText, Executor executor){
+    private Executor executor;
+
+    public Calculator() {
+        this.executor = new DefaultExecutorImp();
+    }
+
+    public Calculator(Executor executor) {
+        this.executor = executor;
+    }
+
+    public String calculate (String taskText){
+
         TaskParser taskParser = new TaskParser(taskText);
         executor.execute(taskParser);
-        System.out.println(taskText + " = " + taskParser.getResult());
+        return taskParser.getResult();
     }
 }

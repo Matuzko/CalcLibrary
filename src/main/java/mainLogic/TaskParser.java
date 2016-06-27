@@ -1,7 +1,6 @@
 package mainLogic;
 
 
-
 public class TaskParser {
 
     private String firstOperand, secondOperand, type, operator, result;
