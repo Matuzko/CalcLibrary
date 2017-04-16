@@ -10,7 +10,7 @@ public class DefaultExecutorImp implements Executor {
 
     @Override
     public Operator operatorFinder(TaskParser taskParser) {
-        Operator operator = null;
+
         if (taskParser.getOperator().equals("+")) {
             switch (taskParser.getType()) {
                 case "i":
